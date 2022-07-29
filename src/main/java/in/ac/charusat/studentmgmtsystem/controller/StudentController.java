@@ -17,7 +17,11 @@ public class StudentController {
     StudentRepository studentRepository;
 //    List<Student> students = new ArrayList<>(
 //            Arrays.asList(
-//                    new Student(1, "Tom", "US"),
+//                    new Student(1, "Tom", "US"),@DeleteMapping("/student/{id}")
+//    public List<Student> deleteStudent(@PathVariable Integer id) {
+//        studentRepository.delete(studentRepository.findById(id).get());
+//        return studentRepository.findAll();
+//    }
 //                    new Student(2, "Harry", "Canada"),
 //                    new Student(3, "Nick", "UK")
 //            )
@@ -37,11 +41,7 @@ public class StudentController {
     }
 
     // Delete the student
-    @DeleteMapping("/student/{id}")
-    public List<Student> deleteStudent(@PathVariable Integer id) {
-        studentRepository.delete(studentRepository.findById(id).get());
-        return studentRepository.findAll();
-    }
+
 
     // Add new student
     @PostMapping("/student")
